@@ -17,8 +17,10 @@ Hasilnya nanti akan dioutputkan berupa angka (0=<x<5) yang dimana:
 5 = Sulit
 
 <br />
-WebApp ini dibuat dengan menggunakan Cloudinary dan Heroku, yang dimana Cloudinary digunakan untuk menyimpan file, lalu Heroku digunakan untuk menghosting  WebAppnya.
+WebApp ini dibuat dengan menggunakan Cloudinary dan Heroku, yang dimana Cloudinary digunakan untuk menyimpan file, 
+lalu Heroku digunakan untuk menghosting  WebAppnya.
 
+<br />
 <br />
 Pembuat:
 <br />
