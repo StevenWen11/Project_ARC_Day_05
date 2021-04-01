@@ -1,0 +1,12 @@
+table, th, tr, td  {
+    border: 1px solid;
+}
+
+input {
+    padding: 12px 20px;
+    margin: 8px 0;
+    color: black;
+    box-sizing: border-box;
+    display: inline;
+    float: none;
+}

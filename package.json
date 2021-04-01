@@ -1,0 +1,21 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "penghubung-back-end",
+  "main": "nodal.js",
+  "scripts": {
+    "test": "make test",
+    "start": "node nodal.js"
+  },
+  "keywords": [
+    "arc-project"
+  ],
+  "author": "Steven",
+  "license": "ISC",
+  "dependencies": {
+    "alert": "^5.0.10",
+    "cloudinary": "^1.25.1",
+    "express.js": "^1.0.0",
+    "streamifier": "^0.1.1"
+  }
+}

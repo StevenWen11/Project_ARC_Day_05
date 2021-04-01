@@ -1,0 +1,19 @@
+.square {
+    height: 200px;
+    width: 200px;
+    background-color: #223843;
+    border-radius: 20%;
+}
+
+p {
+    float: left;
+    color: #fff;
+}
+
+body {
+    background-color: #fff;
+}
+
+a {
+    color: #fff;
+}

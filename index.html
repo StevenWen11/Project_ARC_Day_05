@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project ARC Day 5</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    
+    <table>
+    <tr>
+        <th>Subject topic</th>
+        <th>1 ( mudah )</th>
+        <th>2 ( cukup mudah ) </th>
+        <th>3 ( sedang ) </th>
+        <th>4 ( cukup sulit )</th>
+        <th>5 ( sulit )</th>
+    </tr>
+
+    <tr>
+        <td>Network</td>
+        <td class = "network" id="tableNetwork1"></td>
+        <td class = "network" id="tableNetwork2"></td>      
+        <td class = "network" id="tableNetwork3"></td>   
+        <td class = "network" id="tableNetwork4"></td>    
+        <td class = "network" id="tableNetwork5"></td>    
+    </tr>
+
+    <tr>
+        <td>Internet</td>
+        <td class = "internet" id="tableInternet1"></td>
+        <td class = "internet" id="tableInternet2"></td>      
+        <td class = "internet" id="tableInternet3"></td>   
+        <td class = "internet" id="tableInternet4"></td>    
+        <td class = "internet" id="tableInternet5"></td>    
+    </tr>
+    
+    <tr>
+        <td>Networking Device</td>
+        <td class = "device" id="tableDevice1"></td>
+        <td class = "device" id="tableDevice2"></td>      
+        <td class = "device" id="tableDevice3"></td>   
+        <td class = "device" id="tableDevice4"></td>    
+        <td class = "device" id="tableDevice5"></td>    
+    </tr>
+
+    <tr>
+        <td>Protocol & Standard</td>
+        <td class = "proto" id="tableProto1"></td>
+        <td class = "proto" id="tableProto2"></td>      
+        <td class = "proto" id="tableProto3"></td>   
+        <td class = "proto" id="tableProto4"></td>    
+        <td class = "proto" id="tableProto5"></td>    
+    </tr>
+
+    <tr>
+        <td>OSI Model</td>
+        <td class = "osi" id="tableOsi1"></td>
+        <td class = "osi" id="tableOsi2"></td>      
+        <td class = "osi" id="tableOsi3"></td>   
+        <td class = "osi" id="tableOsi4"></td>    
+        <td class = "osi" id="tableOsi5"></td>    
+    </tr>
+
+    <tr>
+        <td>TCP/IP Protocol</td>
+        <td class = "tcp" id="tableTcp1"></td>
+        <td class = "tcp" id="tableTcp2"></td>      
+        <td class = "tcp" id="tableTcp3"></td>   
+        <td class = "tcp" id="tableTcp4"></td>    
+        <td class = "tcp" id="tableTcp5"></td>    
+    </tr>
+
+    <tr>
+        <td>Encapsulation</td>
+        <td class = "encap" id="tableEncap1"></td>
+        <td class = "encap" id="tableEncap2"></td>      
+        <td class = "encap" id="tableEncap3"></td>   
+        <td class = "encap" id="tableEncap4"></td>    
+        <td class = "encap" id="tableEncap5"></td>    
+    </tr>
+
+    <tr>
+        <td>De-Encapsulation</td>
+        <td class = "decap" id="tableDecap1"></td>
+        <td class = "decap" id="tableDecap2"></td>      
+        <td class = "decap" id="tableDecap3"></td>   
+        <td class = "decap" id="tableDecap4"></td>    
+        <td class = "decap" id="tableDecap5"></td>    
+    </tr>
+
+    <tr>
+        <td>PDU</td>
+        <td class = "pdu" id="tablePdu1"></td>
+        <td class = "pdu" id="tablePdu2"></td>      
+        <td class = "pdu" id="tablePdu3"></td>   
+        <td class = "pdu" id="tablePdu4"></td>    
+        <td class = "pdu" id="tablePdu5"></td>    
+    </tr>
+
+    <tr>
+        <td>Addressing</td>
+        <td class = "address" id="tableAdd1"></td>
+        <td class = "address" id="tableAdd2"></td>      
+        <td class = "address" id="tableAdd3"></td>   
+        <td class = "address" id="tableAdd4"></td>    
+        <td class = "address" id="tableAdd5"></td>    
+    </tr>
+
+    <tr>
+        <td>Mac Address</td>
+        <td class = "mac" id="tableMac1"></td>
+        <td class = "mac" id="tableMac2"></td>      
+        <td class = "mac" id="tableMac3"></td>   
+        <td class = "mac" id="tableMac4"></td>    
+        <td class = "mac" id="tableMac5"></td>    
+    </tr>
+
+    <tr>
+        <td>IP Address</td>
+        <td class = "ip" id="tableIp1"></td>
+        <td class = "ip" id="tableIp2"></td>      
+        <td class = "ip" id="tableIp3"></td>   
+        <td class = "ip" id="tableIp4"></td>    
+        <td class = "ip" id="tableIp5"></td>    
+    </tr>
+
+    <tr>
+        <td>Port Addess</td>
+        <td class = "port" id="tablePort1"></td>
+        <td class = "port" id="tablePort2"></td>      
+        <td class = "port" id="tablePort3"></td>   
+        <td class = "port" id="tablePort4"></td>    
+        <td class = "port" id="tablePort5"></td>    
+    </tr>
+
+    <tr>
+        <td>Routing</td>
+        <td class = "route" id="tableRoute1"></td>
+        <td class = "route" id="tableRoute2"></td>      
+        <td class = "route" id="tableRoute3"></td>   
+        <td class = "route" id="tableRoute4"></td>    
+        <td class = "route" id="tableRoute5"></td>    
+    </tr>
+
+    <tr>
+        <td>DNS</td>
+        <td class = "dns" id="tableDns1"></td>
+        <td class = "dns" id="tableDns2"></td>      
+        <td class = "dns" id="tableDns3"></td>   
+        <td class = "dns" id="tableDns4"></td>    
+        <td class = "dns" id="tableDns5"></td>    
+    </tr>
+
+    <tr>
+        <td>HTTP/HTTPS</td>
+        <td class = "http" id="tableHttp1"></td>
+        <td class = "http" id="tableHttp2"></td>      
+        <td class = "http" id="tableHttp3"></td>   
+        <td class = "http" id="tableHttp4"></td>    
+        <td class = "http" id="tableHttp5"></td>    
+    </tr>
+
+    </table>
+
+    <br>
+
+    
+    <script src="pass_variable.js"></script>
+
+    <form method="post" action="/" onsubmit="setVariable()">
+        <div class="submit-btn">
+        <input type="submit">
+        </div>
+        <input type="hidden" value="valueNetwork1" name="network1" id="hiddenNetwork1">   
+        <input type="hidden" value="valueNetwork2" name="network2" id="hiddenNetwork2"> 
+        <input type="hidden" value="valueNetwork3" name="network3" id="hiddenNetwork3">
+        <input type="hidden" value="valueNetwork4" name="network4" id="hiddenNetwork4">
+        <input type="hidden" value="valueNetwork5" name="network5" id="hiddenNetwork5">   
+
+        <input type="hidden" value="valueInternet1" name="internet1" id="hiddenInternet1">   
+        <input type="hidden" value="valueInternet2" name="internet2" id="hiddenInternet2"> 
+        <input type="hidden" value="valueInternet3" name="internet3" id="hiddenInternet3">
+        <input type="hidden" value="valueInternet4" name="internet4" id="hiddenInternet4">
+        <input type="hidden" value="valueInternet5" name="internet5" id="hiddenInternet5">
+
+        <input type="hidden" value="valueDevice1" name="device1" id="hiddenDevice1">   
+        <input type="hidden" value="valueDevice2" name="device2" id="hiddenDevice2"> 
+        <input type="hidden" value="valueDevice3" name="device3" id="hiddenDevice3">
+        <input type="hidden" value="valueDevice4" name="device4" id="hiddenDevice4">
+        <input type="hidden" value="valueDevice5" name="device5" id="hiddenDevice5">
+
+        <input type="hidden" value="valueProto1" name="proto1" id="hiddenProto1">   
+        <input type="hidden" value="valueProto2" name="proto2" id="hiddenProto2"> 
+        <input type="hidden" value="valueProto3" name="proto3" id="hiddenProto3">
+        <input type="hidden" value="valueProto4" name="proto4" id="hiddenProto4">
+        <input type="hidden" value="valueProto5" name="proto5" id="hiddenProto5">
+
+        <input type="hidden" value="valueOsi1" name="osi1" id="hiddenOsi1">   
+        <input type="hidden" value="valueOsi2" name="osi2" id="hiddenOsi2"> 
+        <input type="hidden" value="valueOsi3" name="osi3" id="hiddenOsi3">
+        <input type="hidden" value="valueOsi4" name="osi4" id="hiddenOsi4">
+        <input type="hidden" value="valueOsi5" name="osi5" id="hiddenOsi5">
+
+        <input type="hidden" value="valueTcp1" name="tcp1" id="hiddenTcp1">   
+        <input type="hidden" value="valueTcp2" name="tcp2" id="hiddenTcp2"> 
+        <input type="hidden" value="valueTcp3" name="tcp3" id="hiddenTcp3">
+        <input type="hidden" value="valueTcp4" name="tcp4" id="hiddenTcp4">
+        <input type="hidden" value="valueTcp5" name="tcp5" id="hiddenTcp5">
+
+        <input type="hidden" value="valueEncap1" name="encap1" id="hiddenEncap1">   
+        <input type="hidden" value="valueEncap2" name="encap2" id="hiddenEncap2"> 
+        <input type="hidden" value="valueEncap3" name="encap3" id="hiddenEncap3">
+        <input type="hidden" value="valueEncap4" name="encap4" id="hiddenEncap4">
+        <input type="hidden" value="valueEncap5" name="encap5" id="hiddenEncap5">
+
+        <input type="hidden" value="valueDecap1" name="decap1" id="hiddenDecap1">   
+        <input type="hidden" value="valueDecap2" name="decap2" id="hiddenDecap2"> 
+        <input type="hidden" value="valueDecap3" name="decap3" id="hiddenDecap3">
+        <input type="hidden" value="valueDecap4" name="decap4" id="hiddenDecap4">
+        <input type="hidden" value="valueDecap5" name="decap5" id="hiddenDecap5">
+
+        <input type="hidden" value="valuePdu1" name="pdu1" id="hiddenPdu1">   
+        <input type="hidden" value="valuePdu2" name="pdu2" id="hiddenPdu2"> 
+        <input type="hidden" value="valuePdu3" name="pdu3" id="hiddenPdu3">
+        <input type="hidden" value="valuePdu4" name="pdu4" id="hiddenPdu4">
+        <input type="hidden" value="valuePdu5" name="pdu5" id="hiddenPdu5">
+
+        <input type="hidden" value="valueAdd1" name="add1" id="hiddenAdd1">   
+        <input type="hidden" value="valueAdd2" name="add2" id="hiddenAdd2"> 
+        <input type="hidden" value="valueAdd3" name="add3" id="hiddenAdd3">
+        <input type="hidden" value="valueAdd4" name="add4" id="hiddenAdd4">
+        <input type="hidden" value="valueAdd5" name="add5" id="hiddenAdd5">
+
+        <input type="hidden" value="valueMac1" name="mac1" id="hiddenMac1">   
+        <input type="hidden" value="valueMac2" name="mac2" id="hiddenMac2"> 
+        <input type="hidden" value="valueMac3" name="mac3" id="hiddenMac3">
+        <input type="hidden" value="valueMac4" name="mac4" id="hiddenMac4">
+        <input type="hidden" value="valueMac5" name="mac5" id="hiddenMac5">
+
+        <input type="hidden" value="valueIp1" name="ip1" id="hiddenIp1">   
+        <input type="hidden" value="valueIp2" name="ip2" id="hiddenIp2"> 
+        <input type="hidden" value="valueIp3" name="ip3" id="hiddenIp3">
+        <input type="hidden" value="valueIp4" name="ip4" id="hiddenIp4">
+        <input type="hidden" value="valueIp5" name="ip5" id="hiddenIp5">
+
+        <input type="hidden" value="valuePort1" name="port1" id="hiddenPort1">   
+        <input type="hidden" value="valuePort2" name="port2" id="hiddenPort2"> 
+        <input type="hidden" value="valuePort3" name="port3" id="hiddenPort3">
+        <input type="hidden" value="valuePort4" name="port4" id="hiddenPort4">
+        <input type="hidden" value="valuePort5" name="port5" id="hiddenPort5">
+
+        <input type="hidden" value="valueRoute1" name="route1" id="hiddenRoute1">   
+        <input type="hidden" value="valueRoute2" name="route2" id="hiddenRoute2"> 
+        <input type="hidden" value="valueRoute3" name="route3" id="hiddenRoute3">
+        <input type="hidden" value="valueRoute4" name="route4" id="hiddenRoute4">
+        <input type="hidden" value="valueRoute5" name="route5" id="hiddenRoute5">
+
+        <input type="hidden" value="valueDns1" name="dns1" id="hiddenDns1">   
+        <input type="hidden" value="valueDns2" name="dns2" id="hiddenDns2"> 
+        <input type="hidden" value="valueDns3" name="dns3" id="hiddenDns3">
+        <input type="hidden" value="valueDns4" name="dns4" id="hiddenDns4">
+        <input type="hidden" value="valueDns5" name="dns5" id="hiddenDns5">
+
+        <input type="hidden" value="valueHttp1" name="http1" id="hiddenHttp1">   
+        <input type="hidden" value="valueHttp2" name="http2" id="hiddenHttp2"> 
+        <input type="hidden" value="valueHttp3" name="http3" id="hiddenHttp3">
+        <input type="hidden" value="valueHttp4" name="http4" id="hiddenHttp4">
+        <input type="hidden" value="valueHttp5" name="http5" id="hiddenHttp5">
+
+    </form>
+
+
+
+<script src="click.js"></script>
+
+</body>
+
+</html>
