@@ -32,4 +32,4 @@ Steven
 Note:
 
 <br />
-Database akan diperbarui apabila saya menemukan bug dan cara untuk mengatasi bug tersebut
+Database akan diperbaharui apabila saya menemukan bug dan cara untuk mengatasi bug tersebut :D
