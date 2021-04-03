@@ -1,8 +1,8 @@
 # Project ARC Day05 - 16520203
 
 WebApp ini menerima input dari pengguna, lalu mengeluarkannya sebagai rating, yang dimana rating-rating yang dihasilkan 
-nantinya akan dioutputkan rata-ratanya. Hasil yang dikeluarkan adalah 0=<x<5, tergantung dari input pengguna.
-Hasilnya nanti akan dioutputkan berupa angka (0=<x<5) yang dimana:
+nantinya akan dioutputkan rata-ratanya. Hasil yang dikeluarkan adalah 0<=x<=5, tergantung dari input pengguna.
+Hasilnya nanti akan dioutputkan berupa angka (0<=x<=5) yang dimana:
 <br />
 0 = Belum Pernah Diisi Sama Sekali
 <br />
