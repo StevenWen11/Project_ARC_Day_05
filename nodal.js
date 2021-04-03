@@ -82,7 +82,7 @@ app.get('/', function (req, res) {
     }).catch(error=>console.log(error));
 
     function someFunc(result) {
-        let imgUrl = result.resources[0].url;
+        let imgUrl = result.resources[0].url +'?ie=' + (new Date()).getTime();
         http.get(imgUrl, function(res){
             let str = '';
             console.log('Response is '+res.statusCode);
@@ -100,18 +100,19 @@ app.get('/', function (req, res) {
 
     function processFunc(outputStr) {
         let processStr = outputStr.split('\n');
-        for(let i = 1; i < processStr.length; ++i) {
+        for(let i = 1; i < processStr.length-1; ++i) {
             let tempData = []
             for(let j = 0; j < 16; ++j) {
                 tempData.push(parseInt(processStr[i][j]));
             }
             data.push(tempData);
-        }         
-        fs.readFile('./main-page.html', function read(err, data) {
+        }
+        console.log(data);         
+        fs.readFile('./main-page.html', function read(err, data2) {
             if (err) {
                 throw err;
             }
-            const content = data;
+            const content = data2;
             console.log(content);
             processFile(content.toString());
         });
@@ -145,22 +146,22 @@ app.get('/', function (req, res) {
                 httpTotal += data[i][15];
             }
             let replaceIndexes = getAllIndexes(contentStr, searchStr);
-            contentStr = contentStr.insert(replaceIndexes[0] + 42 + 0, (networkTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[1] + 42 + 1, (internetTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[2] + 42 + 2, (deviceTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[3] + 42 + 3, (protoTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[4] + 42 + 4, (osiTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[5] + 42 + 5, (tcpTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[6] + 42 + 6, (encapTotal /dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[7] + 42 + 7, (decapTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[8] + 42 + 8, (pduTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[9] + 42 + 9, (addressTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[10] + 42 + 10, (macTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[11] + 42 + 11, (ipTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[12] + 42 + 12, (portTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[13] + 42 + 13, (routeTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[14] + 42 + 14, (dnsTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[15] + 42 + 15, (httpTotal / dataTotal).toString());
+            contentStr = contentStr.insert(replaceIndexes[0] + 42 + 0, ((Math.floor(networkTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[1] + 42 + 1, ((Math.floor(internetTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[2] + 42 + 2, ((Math.floor(deviceTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[3] + 42 + 3, ((Math.floor(protoTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[4] + 42 + 4, ((Math.floor(osiTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[5] + 42 + 5, ((Math.floor(tcpTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[6] + 42 + 6, ((Math.floor(encapTotal /dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[7] + 42 + 7, ((Math.floor (decapTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[8] + 42 + 8, ((Math.floor(pduTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[9] + 42 + 9, ((Math.floor(addressTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[10] + 42 + 10, ((Math.floor(macTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[11] + 42 + 11, ((Math.floor(ipTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[12] + 42 + 12, ((Math.floor(portTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[13] + 42 + 13, ((Math.floor (routeTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[14] + 42 + 14, ((Math.floor(dnsTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[15] + 42 + 15, ((Math.floor(httpTotal / dataTotal) % 5)+1).toString());
             // for(let i = 0; i < replaceIndexes.length; ++i) {
             //     contentStr = contentStr.insert(replaceIndexes[i] + 42 + i, '0');
             // }
@@ -247,37 +248,43 @@ app.post('/', function(request, response) {
     for(let i = 0; i < 5; ++i) {
         if(networkArr[i].toString() == 'rgb(0, 0, 0)') {
             tempData.push(i+1);
-            networkTotal += i+1;
+            networkTotal += i+1; //1
         }
     }
     for(let i = 0; i < 5; ++i) {
         if(internetArr[i].toString() == 'rgb(0, 0, 0)') {
             tempData.push(i+1);
-            internetTotal += i+1;
+            internetTotal += i+1; //2
         }
     }
     for(let i = 0; i < 5; ++i) {
         if(deviceArr[i].toString() == 'rgb(0, 0, 0)') {
             tempData.push(i+1);
-            deviceTotal += i+1;
+            deviceTotal += i+1; //3
         }
     }
     for(let i = 0; i < 5; ++i) {
         if(protoArr[i].toString() == 'rgb(0, 0, 0)') {
             tempData.push(i+1);
-            protoTotal += i+1;
+            protoTotal += i+1; //4
         }
     }
     for(let i = 0; i < 5; ++i) {
         if(osiArr[i].toString() == 'rgb(0, 0, 0)') {
             tempData.push(i+1);
-            osiTotal += i+1;
+            osiTotal += i+1; //5
+        }
+    }
+    for(let i = 0; i < 5; ++i) {
+        if(tcpArr[i].toString() == 'rgb(0, 0, 0)') {
+            tempData.push(i+1);
+            tcpTotal += i+1;
         }
     }
     for(let i = 0; i < 5; ++i) {
         if(encapArr[i].toString() == 'rgb(0, 0, 0)') {
             tempData.push(i+1);
-            encapTotal += i+1;
+            encapTotal += i+1; //6
         }
     }
     for(let i = 0; i < 5; ++i) {
@@ -325,7 +332,7 @@ app.post('/', function(request, response) {
     for(let i = 0; i < 5; ++i) {
         if(dnsArr[i].toString() == 'rgb(0, 0, 0)') {
             tempData.push(i+1);
-            dnsTotal += i+1;
+            dnsTotal += i+1; 
         }
     }
     for(let i = 0; i < 5; ++i) {
@@ -371,22 +378,22 @@ app.post('/', function(request, response) {
         } else {
             let dataTotal = data.length;
             let replaceIndexes = getAllIndexes(contentStr, searchStr);
-            contentStr = contentStr.insert(replaceIndexes[0] + 42 + 0, Math.floor(networkTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[1] + 42 + 1, Math.floor(internetTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[2] + 42 + 2, Math.floor(deviceTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[3] + 42 + 3, Math.floor(protoTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[4] + 42 + 4, Math.floor(osiTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[5] + 42 + 5, Math.floor(tcpTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[6] + 42 + 6, Math.floor(encapTotal /dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[7] + 42 + 7,Math.floor (decapTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[8] + 42 + 8, Math.floor(pduTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[9] + 42 + 9, Math.floor(addressTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[10] + 42 + 10, Math.floor(macTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[11] + 42 + 11, Math.floor(ipTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[12] + 42 + 12, Math.floor(portTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[13] + 42 + 13,Math.floor (routeTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[14] + 42 + 14, Math.floor(dnsTotal / dataTotal).toString());
-            contentStr = contentStr.insert(replaceIndexes[15] + 42 + 15, Math.floor(httpTotal / dataTotal).toString());
+            contentStr = contentStr.insert(replaceIndexes[0] + 42 + 0, ((Math.floor(networkTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[1] + 42 + 1, ((Math.floor(internetTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[2] + 42 + 2, ((Math.floor(deviceTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[3] + 42 + 3, ((Math.floor(protoTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[4] + 42 + 4, ((Math.floor(osiTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[5] + 42 + 5, ((Math.floor(tcpTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[6] + 42 + 6, ((Math.floor(encapTotal /dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[7] + 42 + 7, ((Math.floor (decapTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[8] + 42 + 8, ((Math.floor(pduTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[9] + 42 + 9, ((Math.floor(addressTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[10] + 42 + 10, ((Math.floor(macTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[11] + 42 + 11, ((Math.floor(ipTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[12] + 42 + 12, ((Math.floor(portTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[13] + 42 + 13, ((Math.floor (routeTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[14] + 42 + 14, ((Math.floor(dnsTotal / dataTotal) % 5)+1).toString());
+            contentStr = contentStr.insert(replaceIndexes[15] + 42 + 15, ((Math.floor(httpTotal / dataTotal) % 5)+1).toString());
             
         }
         response.send(contentStr);
