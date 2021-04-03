@@ -27,3 +27,9 @@ Pembuat:
 Steven
 <br />
 16520203
+
+<br />
+Note:
+
+<br />
+Database akan diperbarui apabila saya menemukan bug dan cara untuk mengatasi bug tersebut
